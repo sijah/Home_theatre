@@ -19,7 +19,7 @@
             width: 100%;
             height: 15px;
             border-radius: 5px;
-            background: #d3d3d3;
+            background: #777575;
             outline: none;
             opacity: 0.7;
             -webkit-transition: .2s;
@@ -57,8 +57,9 @@
             text-align: center;
             color: #4CAF50;
         }
-        p{
-         color:#3e8e41
+
+        p {
+            color: #3e8e41
         }
 
         .btn-group button {
@@ -136,18 +137,18 @@
         <h1>AMPLIFER REMOTE</h1>
         <div class="slidecontainer">
             <h2>volume</h2>
-            <input type="range" min="0" max="48" class="slider" id="r" step="1">
-            <p>Value: <span id="demor"></span></p>
+            <input type="range" min="0" max="48" class="slider" id="v" step="1">
+            <p>Value: <span id="vol"></span></p>
         </div>
         <div class="slidecontainer">
             <h2>Bass</h2>
             <input type="range" min="-7" max="7" class="slider" id="b" step="1">
-            <p>Value: <span id="demob"></span></p>
+            <p>Value: <span id="bas"></span></p>
         </div>
         <div class="slidecontainer">
             <h2>Treble</h2>
-            <input type="range" min="-7" max="7" class="slider" id="g" step="1">
-            <p>Value: <span id="demog"></span></p>
+            <input type="range" min="-7" max="7" class="slider" id="t" step="1">
+            <p>Value: <span id="tre"></span></p>
         </div>
 
         <div class="btn-group" style="width:100%">
@@ -180,9 +181,52 @@
                     }
                 }
             }
+            var svol = document.getElementById("v");
+            var ovol = document.getElementById("vol");
+            ovol.innerHTML = svol.value;
+            var sbass = document.getElementById("b");
+            var obass = document.getElementById("bas");
+            obass.innerHTML = sbass.value;
+            var stre = document.getElementById("t");
+            var otre = document.getElementById("tre");
+            otre.innerHTML = stre.value;
+
+            svol.onchange = function () {
+                //outputr.innerHTML = this.value;
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("vol").innerHTML = this.responseText;
+                    }
+                };
+
+                xhttp.open("GET", "TUNE?v=" + svol.value + "&b=" + sbass.value + "&t=" + stre.value, true);
+                xhttp.send();
+            }
+
+            sbass.onchange = function () {
+                //outputg.innerHTML = this.value;
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("bas").innerHTML = slideg.value;
+                    }
+                };
+                xhttp.open("GET", "TUNE?v=" + svol.value + "&b=" + sbass.value + "&t=" + stre.value, true); xhttp.send();
+            }
+
+            stre.onchange = function () {
+                //outputb.innerHTML = this.value;
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("tre").innerHTML = slideb.value;
+                    }
+                };
+                xhttp.open("GET", "TUNE?v=" + svol.value + "&b=" + sbass.value + "&t=" + stre.value, true); xhttp.send();
+            }
 
 
-            
         </script>
 
     </body>
