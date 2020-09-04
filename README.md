@@ -21,4 +21,8 @@ Esp8266 based WiFi enabled remote kit to control Audio amplifier.This project ca
     
  6.  Supports Voice Assistance devices such as Amazon Alexa or Google Home (Not implemented)
  
+## # How it works...
 
+ - Main Hardware of this system is Esp8266 based Soc .
+ - Esp8266 Act as web server  
+ - Esp8266 and Audio processor IC ( **TDA7439**) connected via i2c commutation upon changing different parameters on web app Audio processor IC will receive corresponding data via i2c.
