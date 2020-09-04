@@ -1,5 +1,5 @@
 ## Smart Remote For Audio Amplifier 
-Esp8266 based WiFi enabled remote kit to control Audio amplifier. This project can be used to control tone of An Amplifier from  a smartphone , PC or even with Voice Assistance devices such as Amazon Alexa or Google Home 
+Esp8266 based WiFi enabled remote kit to control Audio amplifier.This project can be used to control tone of An Amplifier from a smartphone ,PC or even with Voice Assistance devices such as Amazon Alexa or Google Home 
 
 ## wrap-up
 
@@ -17,7 +17,7 @@ Esp8266 based WiFi enabled remote kit to control Audio amplifier. This project c
  5. -   Wifi  **AP Mode**  or  **STA mode**
     -   Supports static IP
     -   Up to 5 different networks can be defined
-    -Network visibility supports mDNS (service reporting and metadata)  (.local name resolution)
+    -   Network visibility supports mDNS (service reporting and metadata)  (.local name resolution)
     
  6.  Supports Voice Assistance devices such as Amazon Alexa or Google Home (Not implemented)
  
