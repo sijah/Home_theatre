@@ -153,11 +153,11 @@
 
         <div class="btn-group" style="width:100%">
             <button onclick="myFunction()" style="width:33.3%" class="dropbtn">INPUT</button>
-            <button style="width:33.3%">POWER</button>
+            <button onclick="power(1)" style="width:33.3%">POWER</button>
             <button style="width:33.3%">MUTE</button>
         </div>
         <div id="myDropdown" class="dropdown-content">
-            <a href="#home">USB</a>
+            <p href="#c"></p>USB</p>
             <a href="#about">BLUE TOOTH</a>
             <a href="#contact">FM</a>
         </div>
@@ -225,6 +225,23 @@
                 };
                 xhttp.open("GET", "TUNE?v=" + svol.value + "&b=" + sbass.value + "&t=" + stre.value, true); xhttp.send();
             }
+
+            function power(st) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("LEDState").innerHTML = this.responseText;
+
+                }
+            };
+            xhttp.open("GET", "power?powerstate=" + st, true);
+            xhttp.send();
+
+
+
+        }
+
+
 
 
         </script>
