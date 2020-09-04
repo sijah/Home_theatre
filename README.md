@@ -3,7 +3,7 @@ Esp8266 based WiFi enabled remote kit to control Audio amplifier. This project c
 
 ## wrap-up
 
- 1. Currently Support **TDA 74xx**  
+ 1. Currently Support **TDA 74xx**  series 
  2. Currently project is designed for 2 channel 
  3. Web App  can be used to control following Features
     - Volume 
@@ -20,3 +20,5 @@ Esp8266 based WiFi enabled remote kit to control Audio amplifier. This project c
     -Network visibility supports mDNS (service reporting and metadata)  (.local name resolution)
     
  6.  Supports Voice Assistance devices such as Amazon Alexa or Google Home (Not implemented)
+ 
+
